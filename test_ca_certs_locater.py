@@ -13,7 +13,7 @@ class TestLocator(unittest.TestCase):
         # If the file exists, return it
         exists.return_value = True
         fn = ca_certs_locater.get()
-        self.assertEqual(fn, ca_certs_locater.LINUX_PATH)
+        self.assertEqual(fn, ca_certs_locater.LINUX_PATHS[0])
 
     @ mock.patch('os.path.exists')
     def test_linux_does_not_exist(self, exists):
